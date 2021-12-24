@@ -334,7 +334,7 @@ function indcpaKeypair() {
     let seed_str = hash1.digest('hex');
     // convert hex string to array
     let seed = new Array(64);
-    for (i = 0; i < 64; i++) {
+    for (let i = 0; i < 64; i++) {
         seed[i] = hexToDec(seed_str[2 * i] + seed_str[2 * i + 1]);
     }
     let publicSeed = seed.slice(0, 32);
