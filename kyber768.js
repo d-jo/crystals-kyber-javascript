@@ -123,7 +123,7 @@ function hexToDec(hexString) {
 }
 
 // start KYBER code
-function KeyGen768() {
+export function KeyGen768() {
     // IND-CPA keypair
     let indcpakeys = indcpaKeypair();
 
@@ -168,7 +168,7 @@ function KeyGen768() {
 }
 
 // Generate (c, ss) from pk
-function Encrypt768(pk) {
+export function Encrypt768(pk) {
 
     // random 32 bytes
     let m = new Array(32);
@@ -247,7 +247,7 @@ function Encrypt768(pk) {
 }
 
 // Decrypts the ciphertext to obtain the shared secret (symmetric key)
-function Decrypt768(c, privateKey) {
+export function Decrypt768(c, privateKey) {
 
     // extract sk, pk, pkh and z
     let sk = privateKey.slice(0, 1152);
