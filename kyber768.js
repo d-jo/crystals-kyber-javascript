@@ -139,7 +139,7 @@ export function KeyGen768() {
     let buf_str = hash1.digest('hex');
     // convert hex string to array
     let pkh = new Array(32);
-    for (i = 0; i < 32; i++) {
+    for (let i = 0; i < 32; i++) {
         pkh[i] = hexToDec(buf_str[2 * i] + buf_str[2 * i + 1]);
     }
 
@@ -183,7 +183,7 @@ export function Encrypt768(pk) {
     let buf_tmp = hash1.digest('hex');
     // convert hex string to array
     let mh = new Array(32);
-    for (i = 0; i < 32; i++) {
+    for (let i = 0; i < 32; i++) {
         mh[i] = hexToDec(buf_tmp[2 * i] + buf_tmp[2 * i + 1]);
     }
 
@@ -194,7 +194,7 @@ export function Encrypt768(pk) {
     buf_tmp = hash2.digest('hex');
     // convert hex string to array
     let pkh = new Array(32);
-    for (i = 0; i < 32; i++) {
+    for (let i = 0; i < 32; i++) {
         pkh[i] = hexToDec(buf_tmp[2 * i] + buf_tmp[2 * i + 1]);
     }
 
@@ -206,7 +206,7 @@ export function Encrypt768(pk) {
     let kr_str = hash3.digest('hex');
     // convert hex string to array
     let kr = new Array(32);
-    for (i = 0; i < 64; i++) {
+    for (let i = 0; i < 64; i++) {
         kr[i] = hexToDec(kr_str[2 * i] + kr_str[2 * i + 1]);
     }
     let kr1 = kr.slice(0, 32);
@@ -222,7 +222,7 @@ export function Encrypt768(pk) {
     let ch_str = hash4.digest('hex');
     // convert hex string to array
     let ch = new Array(32);
-    for (i = 0; i < 32; i++) {
+    for (let i = 0; i < 32; i++) {
         ch[i] = hexToDec(ch_str[2 * i] + ch_str[2 * i + 1]);
     }
 
@@ -234,7 +234,7 @@ export function Encrypt768(pk) {
     let ss_str = hash5.digest('hex');
     // convert hex string to array
     let ss = new Array(32);
-    for (i = 0; i < 32; i++) {
+    for (let i = 0; i < 32; i++) {
         ss[i] = hexToDec(ss_str[2 * i] + ss_str[2 * i + 1]);
     }
 
@@ -266,7 +266,7 @@ export function Decrypt768(c, privateKey) {
     let kr_str = hash1.digest('hex');
     // convert hex string to array
     let kr = new Array(64);
-    for (i = 0; i < 64; i++) {
+    for (let i = 0; i < 64; i++) {
         kr[i] = hexToDec(kr_str[2 * i] + kr_str[2 * i + 1]);
     }
     let kr1 = kr.slice(0, 32);
@@ -285,7 +285,7 @@ export function Decrypt768(c, privateKey) {
     let ch_str = hash2.digest('hex');
     // convert hex string to array
     let ch = new Array(32);
-    for (i = 0; i < 32; i++) {
+    for (let i = 0; i < 32; i++) {
         ch[i] = hexToDec(ch_str[2 * i] + ch_str[2 * i + 1]);
     }
 
@@ -298,7 +298,7 @@ export function Decrypt768(c, privateKey) {
         hash3.update(buffer4).update(buffer5);
         let ss_str = hash3.digest('hex');
         // convert hex string to array
-        for (i = 0; i < 32; i++) {
+        for (let i = 0; i < 32; i++) {
             ss[i] = hexToDec(ss_str[2 * i] + ss_str[2 * i + 1]);
         }
     } 
@@ -310,7 +310,7 @@ export function Decrypt768(c, privateKey) {
         hash4.update(buffer6).update(buffer7);
         let ss_str = hash4.digest('hex');
         // convert hex string to array
-        for (i = 0; i < 32; i++) {
+        for (let i = 0; i < 32; i++) {
             ss[i] = hexToDec(ss_str[2 * i] + ss_str[2 * i + 1]);
         }
     }
@@ -482,7 +482,7 @@ function indcpaEncrypt(pk1, msg, coins) {
 
     // calculate A.r
     let u = new Array(paramsK);
-    for (i = 0; i < paramsK; i++) {
+    for (let i = 0; i < paramsK; i++) {
         u[i] = multiply(at[i], r);
     }
 
